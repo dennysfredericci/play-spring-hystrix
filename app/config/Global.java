@@ -8,16 +8,19 @@ import play.GlobalSettings;
 
 public class Global extends GlobalSettings {
 
-    private ApplicationContext ctx;
+	private ApplicationContext ctx;
 
-    @Override
-    public void onStart(Application app) {
-        ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-    }
+	@Override
+	public void onStart(Application app) {
 
-    @Override
-    public <A> A getControllerInstance(Class<A> clazz) {
-        return ctx.getBean(clazz);
-    }
+	}
+
+	@Override
+	public <A> A getControllerInstance(Class<A> clazz) {
+		if (ctx == null) {
+			ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+		}
+		return ctx.getBean(clazz);
+	}
 
 }

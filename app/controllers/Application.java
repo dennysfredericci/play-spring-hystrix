@@ -18,7 +18,13 @@ public class Application extends Controller {
 	}
 
 	public Result index() {
-		service.doSomething();
+		
+		int i = (int) (Math.random() * 500);
+		
+		for (int j = 0; j < i; j++) {
+			service.doSomething();	
+		}
+		
 		return ok(index.render("Your new application is ready."));
 	}
 }
