@@ -4,27 +4,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import play.mvc.Controller;
 import play.mvc.Result;
-import services.SomeService;
+import services.ServiceSample;
 import views.html.index;
 
 @org.springframework.stereotype.Controller
 public class Application extends Controller {
 
-	private SomeService service;
+	private ServiceSample service;
 
 	@Autowired
-	public Application(SomeService service) {
+	public Application(ServiceSample service) {
 		this.service = service;
 	}
 
 	public Result index() {
-		
-		int i = (int) (Math.random() * 500);
-		
-		for (int j = 0; j < i; j++) {
-			service.doSomething();	
-		}
-		
-		return ok(index.render("Your new application is ready."));
+		return ok(index.render());
 	}
+
+	public Result sleep() {
+		Integer duration = Integer.valueOf(request().getQueryString("duration"));
+		this.service.sleepService(duration);
+		return ok();
+	}
+
+	public Result random() {
+
+		try {
+			this.service.randomException();
+		} catch (Exception e) {
+			// Do nothing...
+		}
+
+		return ok();
+	}
+
 }

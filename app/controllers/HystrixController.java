@@ -22,11 +22,6 @@ public class HystrixController extends Controller {
 	}
 	
 	public Result index() {
-		
-		//System.setProperty("hystrix.threadpool.default.maxQueueSize", "512");
-	    //System.setProperty("hystrix.threadpool.default.queueSizeRejectionThreshold", "512");
-	    //System.setProperty("hystrix.command.CommandB.execution.isolation.semaphore.maxConcurrentRequests", "512");
-	    
 
 		final int delay = getDelayParameter();
 		final HystrixEventSource eventSource = new HystrixEventSource();
