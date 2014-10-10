@@ -1,12 +1,87 @@
 @main("Play String Hystrix Sample") {
 
-    This is a simple prof of concept using Play, String and Hystrix
-    
-    <br>
-    
-    You will register the hystrix event stream ( http://localhost:9000/hystrix.stream ) XXXX at <a href="http://hystrix-dashboard.herokuapp.com">Hystrix Dashboard</a> and execute any service below
-    
-     
-    
+<div class="container">
+
+	<div class="row text-center">
+		<h1>Play, Spring and Hystrix!</h1>
+		<p class="lead">This is a simple prof of concept using Play, String and Hystrix</p>
+	</div>
+
+	<br />
+
+	<div class="row text-center">
+	You will register the hystrix event stream ( http://localhost:9000/hystrix.stream ) XXXX at <a href="http://hystrix-dashboard.herokuapp.com">Hystrix Dashboard</a> and execute any service below
+	</div>
+
+	<br /><br />
+
+	<div class="row">
+	
+		<div class="col-sm-6">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Service</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" value="Sleep">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Duration</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" value="100">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary">Go!</button>
+					</div>
+				</div>
+			</form>		
+		</div>
+		
+		<div class="col-sm-6">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Service</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" value="Random Error">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-2 control-label">Duration</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" value="100">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-primary">Go!</button>
+					</div>
+				</div>
+			</form>		
+		</div>		
+
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+$(function(){
+	
+	for (var i = 0; i < 100; i++) {
+	  (function (i) {
+
+		  
+		  
+	  })(i);
+	}
+	
+	
+});
+
+</script>
+
 
 }
