@@ -7,9 +7,8 @@ This is a simple prof of concept with:
 	Spring Framework
 	Hystrix
 
-This app is deployed
 
-You may use the [Histrix Dashboard] (https://github.com/Netflix/Hystrix/tree/master/hystrix-dashboard) to see the service activity
+This app is deployed at Heroku [http://play-spring-hystrix.herokuapp.com/](http://play-spring-hystrix.herokuapp.com/)
 
 
 
